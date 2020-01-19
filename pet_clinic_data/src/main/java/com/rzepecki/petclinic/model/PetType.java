@@ -11,14 +11,22 @@ import javax.validation.constraints.NotEmpty;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "types")
 public class PetType extends BaseEntity {
+
+    @Builder
+    public PetType(Long id, @NotEmpty String name) {
+        super(id);
+        this.name = name;
+    }
 
     @Column(name = "name")
     @NotEmpty
     private String name;
 
-
+    @Override
+    public String toString() {
+        return name;
+    }
 }

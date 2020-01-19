@@ -22,4 +22,5 @@ public class Vet extends Person {
     private Set<Speciality> specialities = new HashSet<>();
 
 
+
 }
